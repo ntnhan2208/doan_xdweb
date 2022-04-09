@@ -49,7 +49,8 @@
                                     <div class="categories">
                                         <select class="form-control" name="category_id" id="category">
                                             @foreach($categories as $category)
-                                                <option value="{{$category->id}}">{{$category->name}}</option>
+                                                <option value="{{$category->id}}"
+                                                        @if($category->id==$product->category_id) selected @endif >{{$category->name}}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -67,7 +68,8 @@
                     <div class="row">
                         <div class="col-3">
                             <div class="form-group">
-                                <input type="text" class="form-control" name="image" id="image" readonly/>
+                                <input value="{{$product->image}}" type="text" class="form-control" name="image"
+                                       id="image" readonly/>
                                 <button type="button" data-avatar="image"
                                         class="btn btn-blue btn-square waves-effect waves-light px-4 mt-3 mb-3 get_image">
                                     {{ trans('site.button_choose')}}

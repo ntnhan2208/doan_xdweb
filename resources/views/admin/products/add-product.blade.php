@@ -19,7 +19,7 @@
                                     <div class="input-group">
                                         <input type="text" name="name"
                                                class="form-control name"
-                                               placeholder="{{ trans('site.blog.category.name') }}">
+                                               placeholder="">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -27,7 +27,7 @@
                                     <div class="input-group">
                                                     <textarea name="detail" rows="7"
                                                               class="form-control"
-                                                              placeholder="{{ trans('site.blog.category.detail') }}">
+                                                              placeholder="">
                                                     </textarea>
                                     </div>
                                 </div>

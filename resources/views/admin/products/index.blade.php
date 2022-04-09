@@ -27,7 +27,7 @@
                                 <tbody>
                                 @foreach($products as $product)
                                     <tr>
-                                        <td><img src="{{ Sanitize::showImage($product->image) }}" width="100"/></td>
+                                        <td><img src="{{ Sanitize::showImage($product->image)}}" width="100"/></td>
                                         <td>{{ $product->name }}</td>
                                         <td>{{ $product->detail }}</td>
                                         <td>{{ $product->cost }}</td>

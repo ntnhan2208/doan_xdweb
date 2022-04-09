@@ -19,7 +19,7 @@
                                     <th data-priority="1">Địa chỉ</th>
                                     <th data-priority="1">SĐT</th>
                                     <th data-priority="1">Món ăn</th>
-                                    <th data-priority="1">SL</th>
+{{--                                    <th data-priority="1">SL</th>--}}
                                     <th data-priority="1">Ghi chú</th>
                                 </tr>
                                 </thead>
@@ -30,8 +30,8 @@
                                         <td>{{ $order->name }}</td>
                                         <td>{{ $order->address }}</td>
                                         <td>{{ $order->phone }}</td>
-                                        <td>{{ $order->product }}</td>
-                                        <td>{{ $order->quantity }}</td>
+                                        <td>{{ implode(", ",$order->product)}}</td>
+{{--                                        <td>{{ $order->quantity }}</td>--}}
                                         <td>{{ $order->note }}</td>
                                         <td class="text-right">
                                             <form class="float-right" action="{{ route('admin-orders.destroy', $order->id) }}"

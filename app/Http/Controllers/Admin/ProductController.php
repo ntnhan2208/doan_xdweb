@@ -28,8 +28,7 @@ class ProductController extends BaseAdminController
 
     public function store(ProductRequest $request)
     {
-        $product = Product::create($input = $request->all());
-//        $this->syncRequest($request, $product);
+        $product = Product::create($request->all());
         return redirect()->route('products.index');
     }
 

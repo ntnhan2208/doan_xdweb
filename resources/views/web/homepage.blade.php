@@ -4,7 +4,8 @@
 <head>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
-        *{
+
+        * {
             font-family: 'Comfortaa', cursive;
         }
     </style>
@@ -77,7 +78,8 @@
                                     {{$product->detail}}
                                 </div>
                             </div>
-                            <a href="{{route('orders.create',$product)}}" type="button" class="btn btn-primary">Đặt hàng</a>
+                            <a href="{{route('orders.create',$product)}}" type="button" class="btn btn-primary">Đặt
+                                hàng</a>
                             <hr>
                         </div>
                     </div>
@@ -85,6 +87,49 @@
             </div>
         </div>
         <!-- .container end -->
+        <section id="blog" class="blog blog-carousel pb-100">
+            <div class="container">
+                <div class="row clearfix">
+                    <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2">
+                        <div class="heading heading-1 mb-50 text--center">
+                            <p class="heading--subtitle">Healthy Food</p>
+                            <h2 class="heading--title mb-0">Featured Products</h2>
+                            <div class="divider--shape-4"></div>
+                        </div>
+                    </div>
+                    <!-- .col-md-8 end -->
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="carousel carousel-dots" data-slide="4" data-slide-rs="2" data-autoplay="true"
+                             data-nav="false" data-dots="true" data-space="0" data-loop="true" data-speed="800">
+                        @foreach($products as $product)
+                            <!-- Blog Entry #1 -->
+                                <div class="blog-entry">
+
+                                    <div class="entry--content">
+
+                                        <div class="entry--title" style="text-align: center">
+                                            <h4><a href="#">{{$product->name}}</a></h4>
+                                        </div>
+                                        <div class="entry--img">
+                                            <a href="#">
+                                                <img src="{{ Sanitize::showImage($product->image) }}" width="300"/>
+                                            </a>
+                                        </div>
+                                        <div class="entry--bio" style="text-align: center">
+                                            {{$product->detail}}
+                                        </div>
+                                    </div>
+                                    <!-- .entry-content end -->
+                                </div>
+                                <!-- .blog-entry end -->
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </section>
     <!-- #blog end -->
     @include('web/layouts/footer')

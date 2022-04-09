@@ -12,9 +12,9 @@ class SearchController extends Controller
 {
     public function index(Request $request)
     {
-        $param=$request->all();
+        $param = $request->all();
         $products = Product::filter($param)->get();
-        $categories=Category::all();
-        return view('web.homepage', compact('products','categories'));
+        $categories = Category::all();
+        return view('web.homepage', compact('products', 'categories'));
     }
 }

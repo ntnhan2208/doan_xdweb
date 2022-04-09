@@ -9,6 +9,7 @@
             font-family: 'Comfortaa', cursive;
         }
     </style>
+
 </head>
 <body>
 <div class="preloader">
@@ -83,37 +84,41 @@
                            placeholder="">
                     </input>
                 </div>
+                {{--                <div class="form-group">--}}
+                {{--                    <label>Tên món ăn: </label>--}}
+                {{--                    <div class="product">--}}
+                {{--                        <select name="product[]" class="select2 mb-3 select2-multiple" style="width: 100%"--}}
+                {{--                                multiple="multiple" data-placeholder="Choose">--}}
+                {{--                            @foreach($products as $product)--}}
+                {{--                                <option value="{{$product->name}}" selected>{{$product->name}} - {{$product->cost}}--}}
+                {{--                                    VNĐ--}}
+                {{--                                </option>--}}
+                {{--                            @endforeach--}}
+                {{--                        </select>--}}
+                {{--                    </div>--}}
+                {{--                </div>--}}
+                <div class="form-group">
+                    <label>Tên món ăn: </label>
+                    <div class="product">
+                        @foreach($products as $product)
+                            <input name="product[]" class="form-check-input" type="checkbox"
+                                   value="{{$product->name}}">
+                            <label>{{$product->name}}</label>
+                            <br>
+                        @endforeach
+                    </div>
+                </div>
                 <div class="form-group">
                     <label>Ghi chú</label>
                     <input name="note"
                            class="form-control"
-                           placeholder="">
+                           placeholder="Vui lòng ghi chú số lượng và các chú ý về giao hàng. Xin cảm ơn!">
                     </input>
                 </div>
             </div>
-            <div class="col-lg-6">
-                <div class="form-group">
-                    <label>Đặt món ăn: </label>
-                    <div class="product">
-                        <select class="form-control" name="product">
-                            @foreach($products as $product)
-                                <option value="{{$product->name}}" selected>{{$product->name}} - {{$product->cost}}
-                                    VNĐ
-                                </option>
-                            @endforeach
-                        </select>
-                    </div>
-                </div>
+            <div class="col-lg-12">
             </div>
-            <div class="col-lg-6">
-                <div class="form-group">
-                    <label>Số lượng: </label>
-                    <div class="product">
-                        <input name="quantity" type="text" class="form-control">
-                    </div>
-                </div>
-            </div>
-
+            <input name="quantity" type="hidden" class="form-control" value="1">
             <div class="col-lg-12">
                 <div class="card-body">
                     <button type="submit" class="btn btn-blue btn-square waves-effect waves-light px-4 mt-3 mb-3">

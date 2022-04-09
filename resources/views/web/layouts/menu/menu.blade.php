@@ -89,7 +89,7 @@
                                         <form class="form-search" action="{{route('searchs.index')}}" method="get">
                                             <input type="text" class="form-control"
                                                    placeholder="Tìm kiếm..." name="name">
-                                            <button class="btn" type="button"><i class="fa fa-search"></i></button>
+                                            <button class="btn" type="submit"><i class="fa fa-search"></i></button>
                                         </form>
                                     </div>
                                 </div>

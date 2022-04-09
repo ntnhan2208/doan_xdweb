@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Web;
 
-use App\Http\Controllers\Admin\BaseAdminController;
+use App\Http\Controllers\Controller;
 use App\Models\Category;
 use function view;
 
-class HomeCategory extends BaseAdminController
+class HomeCategory extends Controller
 {
     public function show($id){
         $category=Category::find($id);

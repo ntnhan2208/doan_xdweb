@@ -11,5 +11,6 @@ class Order extends Model
 
     protected $fillable=['name','address','phone','product','note','quantity'];
 
+    protected $casts=['product'=>'array'];
 
 }

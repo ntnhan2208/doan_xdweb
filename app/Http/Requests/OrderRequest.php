@@ -24,10 +24,9 @@ class OrderRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|unique:products',
+            'name' => 'required',
             'address' => 'required',
             'phone'=>'required|numeric',
-            'quantity'=>'required|numeric',
         ];
     }
 
@@ -38,8 +37,6 @@ class OrderRequest extends FormRequest
             'address.required'=>trans('site.order.validation.address_not_empty'),
             'phone.required'=>trans('site.order.validation.phone_not_empty'),
             'phone.numeric'=>trans('site.order.validation.phone_number'),
-            'quantity.required'=>trans('site.order.validation.quantity_not_empty'),
-            'quantity.numeric'=>trans('site.order.validation.quantity_number'),
         ];
     }
 }
